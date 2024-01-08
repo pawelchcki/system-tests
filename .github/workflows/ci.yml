@@ -26,7 +26,7 @@ concurrency:
 jobs:
 
   lint:
-    runs-on: namespace-profile-default
+    runs-on: namespace-profile-test
     steps:
     - name: Checkout
       uses: actions/checkout@v3
@@ -38,7 +38,7 @@ jobs:
       matrix:
         os:
           - macos-latest
-          - namespace-profile-default
+          - namespace-profile-test
     name: Test the test (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
     steps:
@@ -76,7 +76,7 @@ jobs:
     secrets: inherit
 
   main:
-    runs-on: namespace-profile-default
+    runs-on: namespace-profile-test
     needs:
     - lint
     - test_the_test
