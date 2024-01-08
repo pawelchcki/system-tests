@@ -8,6 +8,7 @@ set -e
 set -u
 set -o pipefail
 
+
 function hint() {
     local program="${BASH_SOURCE[0]##*/}"
     echo "see ${program} ++help for documentation"
