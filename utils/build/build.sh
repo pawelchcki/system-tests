@@ -13,7 +13,7 @@ fi
 
 WEBLOG_VARIANT=${WEBLOG_VARIANT:-${HTTP_FRAMEWORK:-}}
 
-readonly DOCKER_REGISTRY_CACHE_PATH="${DOCKER_REGISTRY_CACHE_PATH:-ghcr.io/datadog/system-tests}"
+readonly DOCKER_REGISTRY_CACHE_PATH="${DOCKER_REGISTRY_CACHE_PATH:-ghcr.io/pawelchcki/system-tests}"
 readonly ALIAS_CACHE_FROM="R" #read cache
 readonly ALIAS_CACHE_TO="W" #write cache
 
