@@ -16,8 +16,6 @@
     flake-utils,
     treefmt-nix,
     nixpkgs-black-pinned,
-    nixpkgs-pylint-pinned,
-    pyproject-nix,
   }: (flake-utils.lib.eachDefaultSystem (system: let
     pkgs-black = import nixpkgs-black-pinned {inherit system;};
 
@@ -49,7 +47,6 @@
     };
 
     python = pkgs.python39;
-
   in {
     packages = {
       default = black;
@@ -69,7 +66,7 @@
           treefmt.config.build.wrapper
           python
           python.pkgs.venvShellHook
-          
+
           pkgs.ruff
         ];
 
@@ -86,7 +83,6 @@
           # pawel: hack-disabled as this breaks everything on my system - since my gcc is newer than nixs
           # export LD_LIBRARY_PATH="${pkgs.stdenv.cc.cc.lib}/lib"
         '';
-
       };
 
     formatter = treefmt.config.build.wrapper;
